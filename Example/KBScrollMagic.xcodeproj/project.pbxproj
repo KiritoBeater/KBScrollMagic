@@ -16,6 +16,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AC8EF94F5A670AF54492B36A /* Pods_KBScrollMagic_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B6088D304F808094802529 /* Pods_KBScrollMagic_Tests.framework */; };
 		B66923771E90EA1800EC8A26 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66923761E90EA1800EC8A26 /* SubViewController.swift */; };
+		B66923791E914FE800EC8A26 /* SubGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66923781E914FE800EC8A26 /* SubGridCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		95CEA8239942CA3A09E3E506 /* Pods-KBScrollMagic_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KBScrollMagic_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KBScrollMagic_Example/Pods-KBScrollMagic_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AD35E08F48525C93F04CF8CD /* Pods-KBScrollMagic_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KBScrollMagic_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KBScrollMagic_Tests/Pods-KBScrollMagic_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B66923761E90EA1800EC8A26 /* SubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
+		B66923781E914FE800EC8A26 /* SubGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubGridCell.swift; sourceTree = "<group>"; };
 		DE7F424B93A0BD6518BF5EA7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F1B6088D304F808094802529 /* Pods_KBScrollMagic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KBScrollMagic_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				B66923761E90EA1800EC8A26 /* SubViewController.swift */,
+				B66923781E914FE800EC8A26 /* SubGridCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66923791E914FE800EC8A26 /* SubGridCell.swift in Sources */,
 				B66923771E90EA1800EC8A26 /* SubViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,

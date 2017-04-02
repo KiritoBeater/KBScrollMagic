@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FkO-rX-hLI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xte-Ds-46K">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--KBScrollMagic-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="KBScrollMagic_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="KBScrollMagic" id="vXZ-lx-hvc" customClass="ViewController" customModule="KBScrollMagic_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="1707" y="686"/>
         </scene>
-        <!--Item-->
+        <!--KBScrollMagic-->
         <scene sceneID="biz-bd-2dJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xte-Ds-46K" sceneMemberID="viewController">
+                <navigationController title="KBScrollMagic" automaticallyAdjustsScrollViewInsets="NO" id="Xte-Ds-46K" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="bai-AJ-7Cj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y5J-Rg-p0J">
@@ -46,23 +46,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyS-Wo-6mP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="942.02898550724649" y="685.59782608695662"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="GSn-3q-omw">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FkO-rX-hLI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ZLA-UM-Ykr">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Xte-Ds-46K" kind="relationship" relationship="viewControllers" id="gCo-I8-nzf"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S35-O4-Uwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="685.59782608695662"/>
         </scene>
     </scenes>
 </document>

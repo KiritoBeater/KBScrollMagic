@@ -20,19 +20,14 @@ class ViewController: UIViewController {
     
     var lastPoint: CGPoint?
     
+    var isTableViewBounces = true
+    
     fileprivate let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.bounces = false
         return scrollView
     }()
     
-    fileprivate let headerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "头部View"
-        label.textAlignment = .center
-        return label
-    }()
-    
+    fileprivate let headerIV = UIImageView()
     fileprivate let scrollBackView: UIView = {
         let view = UIView()
         return view
@@ -44,11 +39,11 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         scrollView.contentSize = CGSize(width: size.width, height: size.height + 200)
-        scrollView.backgroundColor = .green
         view.addSubview(scrollView)
         scrollView.addSubview(scrollBackView)
         
-        scrollBackView.addSubview(headerLabel)
+        headerIV.image = UIImage(named: "image_0")
+        scrollBackView.addSubview(headerIV)
         
         createMenu()
         self.addChildViewController(self.magicVC)
@@ -66,10 +61,13 @@ class ViewController: UIViewController {
             make.bottom.equalTo(self.magicVC.view.snp.bottom)
         }
         
-        headerLabel.snp.makeConstraints { (make) in
+        headerIV.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(200)
         }
+        
+        let settingItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(settingItemHandle))
+        navigationItem.rightBarButtonItem = settingItem
     }
     
     func createMenu() {
@@ -95,6 +93,17 @@ class ViewController: UIViewController {
         }
         
         super.updateViewConstraints()
+    }
+    
+    func settingItemHandle() {
+        isTableViewBounces = !isTableViewBounces
+        
+        magicVC.magicView.reloadData()
+        
+        let alert = UIAlertController(title: "Changed", message: "tableView.bounces = \(isTableViewBounces ? "true" : "false")", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -133,6 +142,7 @@ extension ViewController: VTMagicViewDataSource {
             ovc?.tableView.kb.setinsetY(200)
             ovc?.tableView.kb.setSuperScrollView(scrollView)
         }
+        ovc?.tableView.bounces = isTableViewBounces
         return ovc!
     }
 }

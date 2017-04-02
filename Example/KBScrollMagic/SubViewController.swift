@@ -16,19 +16,20 @@ class SubViewController: UITableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tableView.bounces = false
+        tableView.rowHeight = SubGridCell.cellHeight
+        tableView.register(SubGridCell.self, forCellReuseIdentifier: SubGridCell.cellIdentifier)
     }
     
 }
 
 extension SubViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 13
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .`default`, reuseIdentifier: "cell")
-        cell.textLabel?.text = "\(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: SubGridCell.cellIdentifier) as! SubGridCell
+        cell.coverIV.image = UIImage(named: "image_\(indexPath.row)")
         return cell
     }
 }

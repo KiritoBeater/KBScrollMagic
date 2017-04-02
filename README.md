@@ -5,11 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/KBScrollMagic.svg?style=flat)](http://cocoapods.org/pods/KBScrollMagic)
 [![Platform](https://img.shields.io/cocoapods/p/KBScrollMagic.svg?style=flat)](http://cocoapods.org/pods/KBScrollMagic)
 
+KBScrollMagic is a solution for the gesture conflict between multiple scrollView when we have some scrollViews or tableViews that added to a superview that is also scrollView. Easy to use!
+
+![gif picture](ScreenShots/gif0.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+- iOS 8 +
+- Xcode 8 
+- Swift 3
 
 ## Installation
 
@@ -19,10 +27,20 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "KBScrollMagic"
 ```
+## Usage
+
+easy use!
+
+call the follow code at your scrollView that it's a subview of another scrollView
+
+```swift
+tableView.kb.setinsetY(HeaderViewHeight)
+tableView.kb.setSuperScrollView(UIScrollView)
+```
 
 ## Author
 
-liuxingqipan, 1353137283@qq.com
+Kirito, 1353137283@qq.com
 
 ## License
 
