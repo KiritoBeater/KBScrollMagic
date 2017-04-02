@@ -1,0 +1,22 @@
+{
+  "name": "KBScrollMagic",
+  "version": "0.1.0",
+  "summary": "A short description of KBScrollMagic.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/liuxingqipan/KBScrollMagic",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "liuxingqipan": "1353137283@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/liuxingqipan/KBScrollMagic.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "KBScrollMagic/Classes/**/*"
+}

@@ -1,0 +1,6 @@
+framework module Pods_KBScrollMagic_Example {
+  umbrella header "Pods-KBScrollMagic_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

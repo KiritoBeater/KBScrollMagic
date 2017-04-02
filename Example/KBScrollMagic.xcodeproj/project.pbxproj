@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AC8EF94F5A670AF54492B36A /* Pods_KBScrollMagic_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B6088D304F808094802529 /* Pods_KBScrollMagic_Tests.framework */; };
+		B66923771E90EA1800EC8A26 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66923761E90EA1800EC8A26 /* SubViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1EC18FA46A979BE1DB6226BC /* KBScrollMagic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = KBScrollMagic.podspec; path = ../KBScrollMagic.podspec; sourceTree = "<group>"; };
-		279B42D855F93D120451720C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1EC18FA46A979BE1DB6226BC /* KBScrollMagic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KBScrollMagic.podspec; path = ../KBScrollMagic.podspec; sourceTree = "<group>"; };
+		279B42D855F93D120451720C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3B95BD454F820E471885D1CF /* Pods-KBScrollMagic_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KBScrollMagic_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KBScrollMagic_Tests/Pods-KBScrollMagic_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BC70B613EAC3348FC2E2490 /* Pods-KBScrollMagic_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KBScrollMagic_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-KBScrollMagic_Example/Pods-KBScrollMagic_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* KBScrollMagic_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBScrollMagic_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +46,8 @@
 		70BAB5395B3E929CCCC9973A /* Pods_KBScrollMagic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KBScrollMagic_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CEA8239942CA3A09E3E506 /* Pods-KBScrollMagic_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KBScrollMagic_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KBScrollMagic_Example/Pods-KBScrollMagic_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AD35E08F48525C93F04CF8CD /* Pods-KBScrollMagic_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KBScrollMagic_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KBScrollMagic_Tests/Pods-KBScrollMagic_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DE7F424B93A0BD6518BF5EA7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B66923761E90EA1800EC8A26 /* SubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
+		DE7F424B93A0BD6518BF5EA7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F1B6088D304F808094802529 /* Pods_KBScrollMagic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KBScrollMagic_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				B66923761E90EA1800EC8A26 /* SubViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66923771E90EA1800EC8A26 /* SubViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

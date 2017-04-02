@@ -1,0 +1,48 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - KBScrollMagic (0.1.0)
+  - MJRefresh (3.1.12)
+  - Nimble (5.1.1)
+  - Nimble-Snapshots (4.4.0):
+    - Nimble-Snapshots/Core (= 4.4.0)
+  - Nimble-Snapshots/Core (4.4.0):
+    - FBSnapshotTestCase (~> 2.0)
+    - Nimble
+    - Quick
+  - Quick (1.0.0)
+  - SnapKit (3.2.0)
+  - VTMagic (1.2.4):
+    - VTMagic/Core (= 1.2.4)
+  - VTMagic/Core (1.2.4)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - KBScrollMagic (from `../`)
+  - MJRefresh
+  - Nimble (~> 5.1.1)
+  - Nimble-Snapshots
+  - Quick (~> 1.0.0)
+  - SnapKit
+  - VTMagic
+
+EXTERNAL SOURCES:
+  KBScrollMagic:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
+  KBScrollMagic: c6a37f0883f1ce5b1d0cf7a82a7409879f05a423
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  Nimble-Snapshots: e743439f26c2fa99d8f7e0d7c01c99bcb40aa6f2
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  VTMagic: b49e5f456dbcbfd9a3588ba92417233a105bc193
+
+PODFILE CHECKSUM: 9ae7e17db6f70df3ab49d47211c7533726d8b4bd
+
+COCOAPODS: 1.2.0

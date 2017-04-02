@@ -2,6 +2,10 @@ use_frameworks!
 
 target 'KBScrollMagic_Example' do
   pod 'KBScrollMagic', :path => '../'
+  
+  pod 'VTMagic'
+  pod 'SnapKit'
+  pod 'MJRefresh'
 
   target 'KBScrollMagic_Tests' do
     inherit! :search_paths
