@@ -8,22 +8,10 @@
 
 import Foundation
 
-public final class KiritoBeater<Base> {
-    public let base: Base
-    public init(_ base: Base) {
-        self.base = base
-    }
-}
-
-public protocol KiritoBeaterCompatible {
-    associatedtype CompatibleType
-    var kb: CompatibleType { get }
-}
-
-public extension KiritoBeaterCompatible {
-    public var kb: KiritoBeater<Self> {
-        get { return KiritoBeater(self) }
-    }
+public protocol KBScrollMagicDelegate {
+    
+    func scrollMagicDidEndDrag(when superScrollView: UIScrollView, offSetY: CGFloat) -> Void
+    
 }
 
 extension UIScrollView: KiritoBeaterCompatible {
@@ -89,6 +77,7 @@ extension UIScrollView: KiritoBeaterCompatible {
             }
             
             if press.state == .ended {
+                kb.delegate?.scrollMagicDidEndDrag(when: superScrollView, offSetY: superPositionY)
                 kb.setLastDragPoint(nil)
             } else {
                 kb.setLastDragPoint(currentPoint)
@@ -101,6 +90,7 @@ extension UIScrollView: KiritoBeaterCompatible {
 private var lastDragPointKey: Void?
 private var superScrollViewKey: Void?
 private var insetYKey: Void?
+private var delegateKey: Void?
 
 extension KiritoBeater where Base: UIScrollView {
     
@@ -114,6 +104,20 @@ extension KiritoBeater where Base: UIScrollView {
         base.panGestureRecognizer.addTarget(base, action: #selector(base.panGestureHandel(_:)))
     }
     
+    
+    /// 当需要实现SuperScrollViwe 下拉刷新时可设置此代理
+    ///
+    /// - Parameter delegate: 当需要实现SuperScrollViwe 下拉刷新时可设置此代理
+    public func setDelegate(_ delegate: KBScrollMagicDelegate?) {
+        objc_setAssociatedObject(base, &delegateKey, delegate, .OBJC_ASSOCIATION_ASSIGN)
+    }
+    
+    public func setinsetY(_ y: CGFloat ) {
+        objc_setAssociatedObject(base, &insetYKey, y, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+    }
+
+    
+    
     fileprivate var superScrollView: UIScrollView? {
         return objc_getAssociatedObject(base, &superScrollViewKey) as? UIScrollView
     }
@@ -126,10 +130,10 @@ extension KiritoBeater where Base: UIScrollView {
         return objc_getAssociatedObject(base, &lastDragPointKey) as? CGPoint
     }
     
-    public func setinsetY(_ y: CGFloat ) {
-        objc_setAssociatedObject(base, &insetYKey, y, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+    fileprivate var delegate: KBScrollMagicDelegate? {
+        return objc_getAssociatedObject(base, &delegateKey) as? KBScrollMagicDelegate
     }
-    
+
     fileprivate var insetY: CGFloat {
         if let y = objc_getAssociatedObject(base, &insetYKey) as? CGFloat {
             return y
@@ -137,6 +141,23 @@ extension KiritoBeater where Base: UIScrollView {
             return CGFloat(0)
         }
     }
-
-
 }
+
+public final class KiritoBeater<Base> {
+    public let base: Base
+    public init(_ base: Base) {
+        self.base = base
+    }
+}
+
+public protocol KiritoBeaterCompatible {
+    associatedtype CompatibleType
+    var kb: CompatibleType { get }
+}
+
+public extension KiritoBeaterCompatible {
+    public var kb: KiritoBeater<Self> {
+        get { return KiritoBeater(self) }
+    }
+}
+

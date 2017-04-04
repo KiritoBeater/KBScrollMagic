@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class SubViewController: UITableViewController {
     
@@ -18,6 +19,14 @@ class SubViewController: UITableViewController {
         // Do any additional setup after loading the view.
         tableView.rowHeight = SubGridCell.cellHeight
         tableView.register(SubGridCell.self, forCellReuseIdentifier: SubGridCell.cellIdentifier)
+        
+        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headerRefreshHandle))
+    }
+    
+    func headerRefreshHandle() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.tableView.mj_header.endRefreshing()
+        }
     }
     
 }

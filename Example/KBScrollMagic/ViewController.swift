@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import VTMagic
 import KBScrollMagic
+import MJRefresh
 
 class ViewController: UIViewController {
 
@@ -40,6 +41,8 @@ class ViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: size.width, height: size.height + 200)
         view.addSubview(scrollView)
+        scrollView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headerRefreshHandle))
+
         scrollView.addSubview(scrollBackView)
         
         headerIV.image = UIImage(named: "image_0")
@@ -105,6 +108,21 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
+    func headerRefreshHandle() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.scrollView.mj_header.endRefreshing()
+        }
+    }
+}
+
+extension ViewController: KBScrollMagicDelegate {
+    
+    func scrollMagicDidEndDrag(when superScrollView: UIScrollView, offSetY: CGFloat) {
+        if offSetY < -44 {
+            superScrollView.mj_header.beginRefreshing()
+        }
+    }
 }
 
 extension ViewController: VTMagicViewDelegate {
@@ -139,6 +157,7 @@ extension ViewController: VTMagicViewDataSource {
         var ovc = magicView.dequeueReusablePage(withIdentifier: itemIdentifier1) as? SubViewController
         if ovc == nil {
             ovc = SubViewController()
+            ovc?.tableView.kb.setDelegate(self)
             ovc?.tableView.kb.setinsetY(200)
             ovc?.tableView.kb.setSuperScrollView(scrollView)
         }
