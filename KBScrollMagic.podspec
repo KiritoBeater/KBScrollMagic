@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KBScrollMagic'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'To solve the gesture conflict between multiple scrollView'
 
 # This description is used to generate tags and improve search results.

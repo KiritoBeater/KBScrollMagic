@@ -14,15 +14,15 @@ public protocol KBScrollMagicDelegate {
     
 }
 
-extension UIScrollView: KiritoBeaterCompatible {
+extension UIScrollView: KBScrollMagicCompatible {
     
     func panGestureHandel(_ press: UIPanGestureRecognizer) {
         
-        if let superScrollView = kb.superScrollView {
+        if let superScrollView = kbs.superScrollView {
             let currentPoint = press.translation(in: superScrollView)
             
             if press.state == .began {
-                kb.setLastDragPoint(currentPoint)
+                kbs.setLastDragPoint(currentPoint)
             }
             
             /// Super实际偏移量的Y值
@@ -40,14 +40,14 @@ extension UIScrollView: KiritoBeaterCompatible {
             let zeroPoint = CGPoint(x: self.contentOffset.x, y: -self.contentInset.top)
 
             
-            if let lastPoint = kb.lastDragPoint {
+            if let lastPoint = kbs.lastDragPoint {
                 let distanceY = currentPoint.y - lastPoint.y
-                if superPositionY < kb.insetY && distanceY < 0 {
+                if superPositionY < kbs.insetY && distanceY < 0 {
                     self.contentOffset = zeroPoint
                     let willOffsetY = superOffsetY - distanceY
                     let willPositionY = superPositionY - distanceY
-                    if willPositionY > kb.insetY {
-                        superScrollView.contentOffset = CGPoint(x: superScrollView.contentOffset.x, y: kb.insetY - superScrollView.contentInset.top)
+                    if willPositionY > kbs.insetY {
+                        superScrollView.contentOffset = CGPoint(x: superScrollView.contentOffset.x, y: kbs.insetY - superScrollView.contentInset.top)
                     } else {
                         superScrollView.contentOffset = CGPoint(x: superScrollView.contentOffset.x, y: willOffsetY)
                     }
@@ -77,10 +77,10 @@ extension UIScrollView: KiritoBeaterCompatible {
             }
             
             if press.state == .ended {
-                kb.delegate?.scrollMagicDidEndDrag(when: superScrollView, offSetY: superPositionY)
-                kb.setLastDragPoint(nil)
+                kbs.delegate?.scrollMagicDidEndDrag(when: superScrollView, offSetY: superPositionY)
+                kbs.setLastDragPoint(nil)
             } else {
-                kb.setLastDragPoint(currentPoint)
+                kbs.setLastDragPoint(currentPoint)
             }
             
         }
@@ -92,7 +92,13 @@ private var superScrollViewKey: Void?
 private var insetYKey: Void?
 private var delegateKey: Void?
 
-extension KiritoBeater where Base: UIScrollView {
+extension KBScrollMagic where Base: UIScrollView {
+    
+    public func set(superScrollView: UIScrollView, insetY: CGFloat = 0, delegate: KBScrollMagicDelegate? = nil) {
+        setSuperScrollView(superScrollView)
+        setinsetY(insetY)
+        setDelegate(delegate)
+    }
     
     public func setSuperScrollView(_ superSV: UIScrollView ) {
         
@@ -143,21 +149,21 @@ extension KiritoBeater where Base: UIScrollView {
     }
 }
 
-public final class KiritoBeater<Base> {
+public final class KBScrollMagic<Base> {
     public let base: Base
     public init(_ base: Base) {
         self.base = base
     }
 }
 
-public protocol KiritoBeaterCompatible {
+public protocol KBScrollMagicCompatible {
     associatedtype CompatibleType
-    var kb: CompatibleType { get }
+    var kbs: CompatibleType { get }
 }
 
-public extension KiritoBeaterCompatible {
-    public var kb: KiritoBeater<Self> {
-        get { return KiritoBeater(self) }
+public extension KBScrollMagicCompatible {
+    public var kbs: KBScrollMagic<Self> {
+        get { return KBScrollMagic(self) }
     }
 }
 

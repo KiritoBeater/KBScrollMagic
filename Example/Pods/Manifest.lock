@@ -35,7 +35,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
-  KBScrollMagic: c6a37f0883f1ce5b1d0cf7a82a7409879f05a423
+  KBScrollMagic: f61b1b89f1b5b56b1d1875f1bba2eb5c913a030d
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Nimble-Snapshots: e743439f26c2fa99d8f7e0d7c01c99bcb40aa6f2

@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         scrollView.contentSize = CGSize(width: size.width, height: size.height + 200)
         view.addSubview(scrollView)
         scrollView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headerRefreshHandle))
-
         scrollView.addSubview(scrollBackView)
         
         headerIV.image = UIImage(named: "image_0")
@@ -157,9 +156,12 @@ extension ViewController: VTMagicViewDataSource {
         var ovc = magicView.dequeueReusablePage(withIdentifier: itemIdentifier1) as? SubViewController
         if ovc == nil {
             ovc = SubViewController()
-            ovc?.tableView.kb.setDelegate(self)
-            ovc?.tableView.kb.setinsetY(200)
-            ovc?.tableView.kb.setSuperScrollView(scrollView)
+            ovc?.tableView.kbs.set(superScrollView: scrollView, insetY: 200, delegate: self)
+            /* OR
+            ovc?.tableView.kbs.setDelegate(self)
+            ovc?.tableView.kbs.setinsetY(200)
+            ovc?.tableView.kbs.setSuperScrollView(scrollView)
+            */
         }
         ovc?.tableView.bounces = isTableViewBounces
         return ovc!

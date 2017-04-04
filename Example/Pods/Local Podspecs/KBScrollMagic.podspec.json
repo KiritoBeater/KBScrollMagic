@@ -1,9 +1,9 @@
 {
   "name": "KBScrollMagic",
   "version": "0.1.0",
-  "summary": "A short description of KBScrollMagic.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/liuxingqipan/KBScrollMagic",
+  "summary": "To solve the gesture conflict between multiple scrollView",
+  "description": "TODO: To solve the gesture conflict between multiple scrollView that have the same scroll direction.",
+  "homepage": "https://github.com/KiritoBeater/KBScrollMagic",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "liuxingqipan": "1353137283@qq.com"
   },
   "source": {
-    "git": "https://github.com/liuxingqipan/KBScrollMagic.git",
+    "git": "https://github.com/KiritoBeater/KBScrollMagic.git",
     "tag": "0.1.0"
   },
   "platforms": {
