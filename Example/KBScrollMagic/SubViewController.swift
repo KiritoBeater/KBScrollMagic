@@ -41,4 +41,9 @@ extension SubViewController {
         cell.coverIV.image = UIImage(named: "image_\(indexPath.row)")
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = SubViewController()
+        show(vc, sender: self)
+    }
 }
